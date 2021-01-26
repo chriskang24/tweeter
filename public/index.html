@@ -1,29 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+    
+    <link 
+    href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+    rel="stylesheet"  type='text/css'>
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+     <!-- Nav CSS -->
+     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+     <!-- Header CSS -->
+     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+     <!-- Main CSS -->
+     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- Character Counter JS -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
+      <div class="boxStyle1">
       <span>tweeter</span>
+      </div>
+      <div class="boxStyle2">
+        <span> <strong>Write</strong> a new tweet</span> 
+        <i class="fa fa-angle-double-down"></i>
+      </div>
     </nav>
 
+    <header>
+      <div class="Aligner">
+        <div class="Aligner-item Aligner-item--top"></div>
+        <div class="Aligner-item"><img src="/images/profile-hex.png"></div>
+        <div class="Aligner-item Aligner-item--bottom"></div>
+      </div>
+      <br>
+      <div class="Aligner">
+        <div class="Aligner-item Aligner-item--top"></div>
+        <div class="Aligner-item"><h2><strong>Christopher</strong> Kang</h2></div>
+        <div class="Aligner-item Aligner-item--bottom"></div>
+      </div>
+  </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+
+          <div class="topField">
+            <!-- <label for="tweet-text">What are you humming about?</label> -->
+            <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+          </div>
+         
+          <div class="bottomField">
+            <button type="submit" class="buttonMod">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+
+        </form>
+      </section>
+
+    </main>
+    
   </body>
 </html>
+

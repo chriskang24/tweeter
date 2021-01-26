@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+nav {
+  font-family: 'Bungee', cursive;
+  font-weight: 300;
+  background-color: #4056a1;
+  height: 120px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.boxStyle1 {
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1.5em;
+
+}
+div.boxStyle2 {
+  font-family: sans-serif;
+  font-size: smaller;
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+i {
+  color: red;
+}
+

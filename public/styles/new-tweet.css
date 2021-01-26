@@ -1,0 +1,57 @@
+.button {
+  font-family: 'Bungee', cursive;
+  font-weight: 300;
+  background-color: #f0c711;
+}
+
+
+.topField {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.bottomField {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+  padding-top: 0.5em;
+  width: 90%;
+}
+
+.modifyBorder {
+  border: none;
+  border-bottom: 5px solid black;
+}
+
+.buttonMod {
+  font-family: 'Bungee', cursive;
+  font-weight: 300;
+  background-color: #4056a1;
+  color:white
+}
+
+textarea {
+  width: 90%;
+}
+
+form {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: stretch;
+}
+
+::placeholder {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 5px solid grey;
+}

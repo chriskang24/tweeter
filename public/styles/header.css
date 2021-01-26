@@ -1,0 +1,30 @@
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 50%;
+  color: white;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #222928e3;
+  background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
+}
+
+h2 {
+  font-family: sans-serif;
+  font-weight: normal;
+}
