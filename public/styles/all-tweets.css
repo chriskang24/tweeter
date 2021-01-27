@@ -1,0 +1,57 @@
+article {
+  background-color: #f4f1ec;
+  border-color: black;
+  width: 90%;
+  outline:  5px outset;
+  color: grey;
+}
+
+.all-tweets {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+.tweet-info{
+  background-color: #f4f1ec;
+  background-image: none;
+  height: 100px;
+}
+
+.flex-mods{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.content-mods {
+    content: ""; 
+    display: block; 
+    margin: 0 auto; 
+    width: 95%; 
+    padding-top: 20px;
+    border-bottom: 3px solid grey; 
+}
+
+h1 {
+  font-weight: normal;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+article:hover {
+  box-shadow: 10px 5px 5px rgb(33, 107, 204);
+
+}
+
+article:hover .hide {
+  visibility: visible;
+  color: rgb(33, 107, 204);
+}
+
+i {
+  color: darkblue;
+  padding-left: 0.15em;
+}

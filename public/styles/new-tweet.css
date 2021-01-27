@@ -1,7 +1,7 @@
 .button {
   font-family: 'Bungee', cursive;
   font-weight: 300;
-  background-color: #f0c711;
+  background-color: #4056a1;
 }
 
 
@@ -55,3 +55,8 @@ textarea {
   outline: none;
   border-bottom: 5px solid grey;
 }
+
+.modifyRed {
+  color: red;
+}
+
