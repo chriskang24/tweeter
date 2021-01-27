@@ -1,10 +1,14 @@
-const renderTweets = function (data) {
+const renderTweets = function(data) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
 
   // create the HTML element
+
+  $('#tweets-container').empty();
+
   for (let tweetData of data) {
+
     const newSingleTweet = createTweetElement(tweetData);
 
     // append each HTML element to the article container
@@ -12,22 +16,29 @@ const renderTweets = function (data) {
     $('#tweets-container').prepend(newSingleTweet);
 
   }
-}
+};
 
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
+  
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
 
-  const htmlString = `
+  const htmlString = ` 
+  
  <article class="tweetMods">
     <header class="tweet-info">
     <div class="flex-mods">
     <h1>
-    <img class="image-placeholder" src="https://i.imgur.com/73hZDYK.png">${tweet.user.name}</h1>
+    <img class="image-placeholder" src=${tweet.user.avatars}>${tweet.user.name}</h1>
     <h2 class="hide">${tweet.user.handle}</h2>
     </div>
     </header>
 
-    <p class="flex-mods">${tweet.content.text}</p>
+    <p class="flex-mods">${escape(tweet.content.text)}</p>
     <p class="content-mods"></p>
   
     <footer>
@@ -41,43 +52,75 @@ const createTweetElement = function (tweet) {
     </div>
     </footer>
  </article>
- `
+ `;
   return htmlString;
-}
+};
 
 
 // const $tweet = createTweetElement(data);
 // $('#tweets-container').append($tweet);
 
+$(document).ready(function() {
 
-$(document).ready(function () {
+  const loadTweets = function() {
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
+    $.ajax({
+      url: `http://localhost:8080/tweets`,
+      method: 'GET',
+    })
+      .done((tweets) => renderTweets(tweets))
+      .fail(() => console.log('Error'))
+      .always(() => console.log('Request Completed'));
+
+  };
+  
+
+  $('#load-new-tweet').on('submit', function(event) {
+
+
+    event.preventDefault();
+
+
+    const lengthCheck = $('#tweet-text').val().length;
+    
+    if (lengthCheck > 140) {
+      // alert user form too long
+      $('.error-message').html(`<p>You have more than 140 characters!</p>`);
+      $('.error-message').slideDown('slow');
+      return;
+
     }
-  ]
+  
+    if (lengthCheck === 0) {
+      // alert user to put text in form before submission
+      $('.error-message').html(`<p>Please enter text!</p>`);
+      $('.error-message').slideDown('slow');
+      return;
+    }
+    
+    
+    // extract the info from the form => serialize
 
-  renderTweets(data);
+    const formContent = $(this).serialize();
+
+    // console.log(formContent);
+
+    $.ajax({
+      url: `http://localhost:8080/tweets`,
+      method: 'POST',
+      data: formContent,
+    })
+      .done(() => loadTweets())
+      .fail(() => console.log('Error'))
+      .always(() => console.log('Request Completed'));
+
+      
+    $('#tweet-text').val('');
+    $('.counter').val(140);
+    $('.error-message').hide();
+  });
+
+  loadTweets();
 
 });
+

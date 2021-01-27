@@ -48,3 +48,14 @@ main {
 
 }
 
+.error-message{
+  color:red;
+  border: 5px solid grey;
+  display: none;
+  width: 90%;
+  margin-top: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+}
+
