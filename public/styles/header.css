@@ -16,12 +16,13 @@
 .Aligner-item--bottom {
   align-self: flex-end;
 }
-
+@media only screen and (max-width: 1023px) {
 header {
   height: 400px;
   width: 100%;
   background-color: #222928e3;
   background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
+}
 }
 
 h2 {

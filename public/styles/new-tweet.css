@@ -60,3 +60,11 @@ textarea {
   color: red;
 }
 
+.newTweet {
+  margin-top: 1.5em;
+}
+
+textarea {
+  padding-top: 50px;
+
+}
