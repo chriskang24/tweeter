@@ -43,7 +43,7 @@ const createTweetElement = function(tweet) {
   
     <footer>
       <div class="flex-mods">
-      <p>${tweet.created_at}</p>
+      <p>${moment(tweet.created_at).fromNow()}</p>
       <p>
         <i class="fa fa-flag"></i>
         <i class="fa fa-retweet"></i>
@@ -56,6 +56,8 @@ const createTweetElement = function(tweet) {
   return htmlString;
 };
 
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js">${moment(timestamp).fromNow()}</script>
+// <p>${tweet.created_at}</p>
 
 // const $tweet = createTweetElement(data);
 // $('#tweets-container').append($tweet);
