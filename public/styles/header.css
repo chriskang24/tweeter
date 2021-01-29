@@ -16,16 +16,25 @@
 .Aligner-item--bottom {
   align-self: flex-end;
 }
+
+h2 {
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+
 @media only screen and (max-width: 1023px) {
+
 header {
   height: 400px;
   width: 100%;
   background-color: #222928e3;
   background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
 }
-}
 
-h2 {
-  font-family: sans-serif;
-  font-weight: normal;
+.space-edits {
+  margin-top: 1em;
+
 }
+}
+  
