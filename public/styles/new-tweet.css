@@ -4,11 +4,9 @@
   background-color: #4056a1;
 }
 
-
 .topField {
   display: flex;
   flex-direction: column;
-  
 }
 
 .bottomField {
@@ -66,5 +64,4 @@ textarea {
 
 textarea {
   padding-top: 50px;
-
 }

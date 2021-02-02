@@ -11,13 +11,13 @@ article {
   padding-bottom: 1.5em;
 }
 
-.tweet-info{
+.tweet-info {
   background-color: #f4f1ec;
   background-image: none;
   height: 100px;
 }
 
-.flex-mods{
+.flex-mods {
   display: flex;
   justify-content: space-between;
   padding-left: 1.5em;
@@ -37,13 +37,8 @@ h1 {
   font-weight: normal;
 }
 
-.hide {
-  visibility: hidden;
-}
-
 article:hover {
   box-shadow: 10px 5px 5px rgb(33, 107, 204);
-
 }
 
 article:hover .hide {

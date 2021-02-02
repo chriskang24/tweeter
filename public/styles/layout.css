@@ -60,9 +60,11 @@ main {
 }
 
 @media only screen and (min-width: 1024px) {
+  
   .desktop-view {
     display: flex;
   }
+  
   .base-header-edit {
     margin-right: 1.5em;
     margin-top: 5em;
@@ -70,14 +72,14 @@ main {
     margin-bottom: 1.5em;
     width: 80%;
     height: 400px;
-    
     background-color: #222928e3;
     background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
-  
   }
+
   .Aligner-item {
     text-align: center;
   }
+
   img {
     width: 100;
     height: auto;
@@ -87,7 +89,7 @@ main {
   h1 {
     font-size: 1em;
   }
-  
+
   h2 {
     margin-top: 0px;
   }
@@ -99,9 +101,9 @@ main {
   .new-tweet {
     margin-top: 1.5em;
   }
+
   textarea {
     padding-top: 50px;
-
   }
 
 }
